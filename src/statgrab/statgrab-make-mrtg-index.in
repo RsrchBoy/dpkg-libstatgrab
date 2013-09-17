@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 # i-scream libstatgrab
 # http://www.i-scream.org
-# Copyright (C) 2000-2004 i-scream
+# Copyright (C) 2000-2013 i-scream
 # 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
-# $Id: statgrab-make-mrtg-index.in,v 1.7 2004/04/06 14:53:00 tdb Exp $
+# $Id$
 
 use strict;
 use Getopt::Long;

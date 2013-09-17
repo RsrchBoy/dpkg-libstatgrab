@@ -1,6 +1,6 @@
 # Makefile for libstatgrab/src/saidar
 # http://www.i-scream.org/libstatgrab/
-# $Id: Makefile.am,v 1.7 2004/06/18 23:45:40 tdb Exp $
+# $Id$
 
 if SAIDAR
 bin_PROGRAMS = saidar
@@ -8,9 +8,10 @@ endif
 
 saidar_SOURCES = saidar.c
 
-INCLUDES = @SAIDARCPPFLAGS@ -I$(top_srcdir) -I$(top_builddir) \
-           -I$(top_srcdir)/src -I$(top_builddir)/src\
-           -I$(top_srcdir)/src/libstatgrab -I$(top_builddir)/src/libstatgrab
+AM_CPPFLAGS = @SAIDARCPPFLAGS@ -I$(top_srcdir) -I$(top_builddir) \
+              -I$(top_srcdir)/src -I$(top_builddir)/src \
+              -I$(top_srcdir)/src/libstatgrab -I$(top_builddir)/src/libstatgrab \
+              @CLIBFLAGS@
 
 LDADD = $(top_builddir)/src/libstatgrab/libstatgrab.la @SAIDARLIBS@ @LINKFLAGS@
 
