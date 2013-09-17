@@ -1,10 +1,26 @@
-.TH statgrab 1 $Date:\ 2005/04/25\ 12:37:22\ $ i\-scream 
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH statgrab 1 2013-06-07 i-scream ""
 .SH NAME
-statgrab \- sysctl\-style interface to system statistics
+statgrab \- sysctl-style interface to system statistics
 .SH SYNOPSIS
-\fBstatgrab\fR [OPTION]\&... [STAT]\&...
+'nh
+.fi
+.ad l
+\fBstatgrab\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[OPTION]\&... [STAT]\&...
+'in \n(.iu-\nxu
+.ad b
+'hy
 .SH DESCRIPTION
-statgrab provides a sysctl\-style interface to all
+\fBstatgrab\fR provides a sysctl-style interface to all
 the system statistics available through libstatgrab. This is useful
 for applications that don't want to make library calls, but still
 want to access the statistics.
@@ -14,55 +30,55 @@ provided to generate configuration files.
 .SH OPTIONS
 The following options are supported.
 .TP 
-\fB\-l\fR
-Linux sysctl\-style output (default)
+\*(T<\fB\-l\fR\*(T>
+Linux sysctl-style output (default)
 .TP 
-\fB\-b\fR
-BSD sysctl\-style output
+\*(T<\fB\-b\fR\*(T>
+BSD sysctl-style output
 .TP 
-\fB\-m\fR
-MRTG\-compatible output
+\*(T<\fB\-m\fR\*(T>
+MRTG-compatible output
 .TP 
-\fB\-u\fR
+\*(T<\fB\-u\fR\*(T>
 Plain output (only show values)
 .TP 
-\fB\-n\fR
+\*(T<\fB\-n\fR\*(T>
 Display cumulative stats once (default)
 .TP 
-\fB\-s\fR
+\*(T<\fB\-s\fR\*(T>
 Display stat differences repeatedly
 .TP 
-\fB\-o\fR
+\*(T<\fB\-o\fR\*(T>
 Display stat differences once
 .TP 
-\fB\-t\fR \fIDELAY\fR
+\*(T<\fB\-t\fR\*(T> \fIDELAY\fR
 When repeating, wait DELAY seconds between updates (default 1)
 .TP 
-\fB\-p\fR
+\*(T<\fB\-p\fR\*(T>
 Display CPU usage differences as percentages rather than
 absolute values
 .TP 
-\fB\-f\fR \fIFACTOR\fR
-Display floating\-point values as integers scaled by FACTOR
+\*(T<\fB\-f\fR\*(T> \fIFACTOR\fR
+Display floating-point values as integers scaled by FACTOR
 .TP 
-\fB\-K\fR
+\*(T<\fB\-K\fR\*(T>
 Display byte counts in kibibytes
 .TP 
-\fB\-M\fR
+\*(T<\fB\-M\fR\*(T>
 Display byte counts in mebibytes
 .TP 
-\fB\-G\fR
+\*(T<\fB\-G\fR\*(T>
 Display byte counts in gibibytes
 .PP
-If no \fBSTAT\fR options are given, all will be displayed.
+If no \*(T<\fBSTAT\fR\*(T> options are given, all will be displayed.
 Specify 'STAT.' to display all statistics starting with that prefix.
-.SH SEE\ ALSO
-\fBstatgrab\-make\-mrtg\-config\fR(1)
-\fBstatgrab\-make\-mrtg\-index\fR(1)
+.SH "SEE ALSO"
+\fBstatgrab-make-mrtg-config\fR(1)
+\fBstatgrab-make-mrtg-index\fR(1)
 \fBsaidar\fR(1)
 \fBstatgrab\fR(3)
 .SH AUTHORS
 This man page was derived from the man page written by Bartosz
 Fenski for the Debian GNU/Linux distribution.
 .SH WEBSITE
-http://www.i\-scream.org/libstatgrab/
+\(lahttp://www.i-scream.org/libstatgrab/\(ra

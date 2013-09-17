@@ -1,7 +1,8 @@
 /*
  * i-scream libstatgrab
  * http://www.i-scream.org
- * Copyright (C) 2000-2004 i-scream
+ * Copyright (C) 2000-2013 i-scream
+ * Copyright (C) 2010-2013 Jens Rehsack
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,13 +18,17 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
- * $Id: page_stats.c,v 1.9 2004/04/06 14:52:56 tdb Exp $
+ * $Id$
  */
 
 #include <stdio.h>
 #include <statgrab.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#include "helpers.h"
+
+static int quit;
 
 int main(int argc, char **argv){
 
@@ -41,19 +46,29 @@ int main(int argc, char **argv){
 		}
 	}
 
+	/* Initialise helper - e.g. logging, if any */
+	sg_log_init("libstatgrab-examples", "SGEXAMPLES_LOG_PROPERTIES", argc ? argv[0] : NULL);
+
 	/* Initialise statgrab */
-	sg_init();
+	sg_init(1);
+
+	register_sig_flagger( SIGINT, &quit );
 
 	/* Drop setuid/setgid privileges. */
-	if (sg_drop_privileges() != 0) {
-		perror("Error. Failed to drop privileges");
-		return 1;
-	}
+	if (sg_drop_privileges() != SG_ERROR_NONE)
+		sg_die("Error. Failed to drop privileges", 1);
 
-	while( (page_stats = sg_get_page_stats_diff()) != NULL){
-		printf("Pages in : %lld\n", page_stats->pages_pagein);
-		printf("Pages out : %lld\n", page_stats->pages_pageout);
-		sleep(delay);
+	page_stats = sg_get_page_stats_diff(NULL);
+	if(page_stats == NULL)
+		sg_die("Failed to get page stats", 1);
+
+	while( (page_stats = sg_get_page_stats_diff(NULL)) != NULL){
+		int ch;
+		printf("Pages in : %llu\n", page_stats->pages_pagein);
+		printf("Pages out : %llu\n", page_stats->pages_pageout);
+		ch = inp_wait(delay);
+		if( quit || (ch == 'q') )
+			break;
 	}
 
 	exit(0);
