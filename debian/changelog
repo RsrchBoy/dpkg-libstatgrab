@@ -1,3 +1,9 @@
+libstatgrab (0.90-0~10.04~ppa1) lucid; urgency=low
+
+  * Build for lucid.
+
+ -- Chris Weyl <cweyl@alumni.drew.edu>  Tue, 17 Sep 2013 12:20:05 -0700
+
 libstatgrab (0.90-0) UNRELEASED; urgency=low
 
   * Import upstream version 0.90.
