@@ -7,7 +7,7 @@ Build-Depends: debhelper (>> 4.0.0), libncurses5-dev
 Homepage: http://www.i-scream.org/libstatgrab/
 Standards-Version: 3.6.2
 
-Package: libstatgrab6
+Package: libstatgrab9
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}
@@ -19,7 +19,7 @@ Description: library being useful interface to system statistics
 Package: libstatgrab-dev
 Section: libdevel
 Architecture: any
-Depends: libstatgrab6 (= ${binary:Version})
+Depends: libstatgrab9 (= ${binary:Version})
 Conflicts: libstatgrab-dev (<< 0.12-1)
 Description: development files of library for system statistics
  libstatgrab is a library which provides an easy to use interface

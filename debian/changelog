@@ -2,8 +2,9 @@ libstatgrab (0.90-0) UNRELEASED; urgency=low
 
   * Import upstream version 0.90.
   * Convert to native.
+  * Build as libstatgrab9, so as to not kill libstatgrab6 on other systems.
 
- -- Chris Weyl <cweyl@alumni.drew.edu>  Tue, 17 Sep 2013 11:10:42 -0700
+ -- Chris Weyl <cweyl@alumni.drew.edu>  Tue, 17 Sep 2013 11:51:36 -0700
 
 libstatgrab (0.17-0ubuntu1) natty; urgency=low
 
