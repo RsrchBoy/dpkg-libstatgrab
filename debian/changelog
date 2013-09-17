@@ -1,3 +1,9 @@
+libstatgrab (0.90-0) UNRELEASED; urgency=low
+
+  * Import upstream version 0.90.
+
+ -- Chris Weyl <cweyl@alumni.drew.edu>  Tue, 17 Sep 2013 11:03:28 -0700
+
 libstatgrab (0.17-0ubuntu1) natty; urgency=low
 
   * New upstream release
