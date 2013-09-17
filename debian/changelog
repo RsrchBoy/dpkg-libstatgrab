@@ -1,3 +1,9 @@
+libstatgrab (0.90-0~12.04~ppa1) precise; urgency=low
+
+  * Build for precise.
+
+ -- Chris Weyl <cweyl@alumni.drew.edu>  Tue, 17 Sep 2013 12:21:50 -0700
+
 libstatgrab (0.90-0) UNRELEASED; urgency=low
 
   * Import upstream version 0.90.
