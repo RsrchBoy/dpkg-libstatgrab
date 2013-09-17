@@ -27,7 +27,7 @@ Description: development files of library for system statistics
  Load, Memory, Swap, Disk I/O, and Network I/O.
  .
  This package contains files needed if you wish to use the libstatgrab
- library in your own programs. 
+ library in your own programs.
 
 Package: saidar
 Section: utils
@@ -46,9 +46,9 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: mrtg
 Description: sysctl-style access to system statistics
- statgrab provides an access to system statistics using a sysctl-style 
- interface. This is useful for applications that don't want to make 
- library calls, but still want to access the statistics. An example is mrtg, 
+ statgrab provides an access to system statistics using a sysctl-style
+ interface. This is useful for applications that don't want to make
+ library calls, but still want to access the statistics. An example is mrtg,
  for which scripts are provided to generate configuration files.
  .
  statgrab utilizes libstatgrab library.
