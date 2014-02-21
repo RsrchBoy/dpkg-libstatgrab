@@ -1,3 +1,9 @@
+libstatgrab (0.90-0~14.04~ppa1) trusty; urgency=low
+
+  * Build for trusty.
+
+ -- Chris Weyl <cweyl@alumni.drew.edu>  Fri, 21 Feb 2014 15:40:09 -0800
+
 libstatgrab (0.90-0) UNRELEASED; urgency=low
 
   * Import upstream version 0.90.
